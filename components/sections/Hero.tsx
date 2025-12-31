@@ -1,16 +1,18 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import dynamic from "next/dynamic";
 
 export default function Hero() {
   return (
-    <section className=" mx-auto max-w-6xl rounded-3xl px-4 py-16 sm:py-24 text-center bg-gradient-to-br from-white via-slate-50 to-white overflow-hidden bg-gradient-to-br from-white via-slate-50 to-white border border-slate-200 shadow-md px-6 py-16">
+    <section id="home" className=" mx-auto max-w-6xl rounded-3xl px-4 py-16 sm:py-24 text-center bg-gradient-to-br from-white via-slate-50 to-white overflow-hidden bg-gradient-to-br from-white via-slate-50 to-white border border-slate-200 shadow-md px-6 py-16">
 
       <motion.h1
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.45, ease: "easeOut" }}
         className="text-5xl sm:text-5xl font-extrabold tracking-tight text-slate-900"
+        id="home-heading"
       >
         <span className="text-pink-600">RK</span> <span className="text-white-600 !important">LOOKS</span>
         <span className="block mx-auto mt-2 h-1 w-30 rounded-full bg-amber-500" />
@@ -42,6 +44,7 @@ export default function Hero() {
         <a
           href="tel:6281045377"
           className="rounded-lg border border-gray-700 px-6 py-3 text-base font-bold text-gray-900 active:scale-95 transition"
+          rel="noopener noreferrer"
         >
           <span className="inline-flex items-center gap-3">
             <FaPhoneAlt className="text-blue-600 text-3xl" />
@@ -53,6 +56,7 @@ export default function Hero() {
           href="https://wa.me/916281045377"
           target="_blank"
           className="rounded-lg border border-gray-700 px-6 py-3 text-base font-bold text-gray-900 active:scale-95 transition"
+          rel="noopener noreferrer"
         >
           <span className="inline-flex items-center gap-2">
             <FaWhatsapp className="text-green-600 text-3xl" />

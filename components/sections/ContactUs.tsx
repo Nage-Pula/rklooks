@@ -4,15 +4,13 @@ import { Scissors } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import {
-  FaUser,
-  FaCommentDots,
-  FaWhatsapp,
-  FaPhoneAlt,
-  FaInstagram,
-  FaFacebook,
-  FaGoogle,
-} from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa6";
+import { FaGoogle } from "react-icons/fa6";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaCommentDots } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
 
 export default function ContactUs() {
@@ -29,6 +27,10 @@ export default function ContactUs() {
     left: number;
     right: number;
   } | null>(null);
+  const [pulseActive, setPulseActive] = useState(true);
+
+
+
 
 
 
@@ -62,8 +64,8 @@ export default function ContactUs() {
   };
 
   return (
-    <section className="px-6 py-16 text-center bg-gradient-to-b from-black to-gray-900 text-white">
-      <h2 className="text-3xl font-semibold text-white">Contact Us</h2>
+    <section id="contact" className="px-6 py-16 text-center bg-gradient-to-b from-black to-gray-900 text-white">
+      <h2 id="contact-heading" className="text-3xl font-semibold text-white">Contact Us</h2>
       <p className="mt-2 text-lg text-gray-300">
         Leave your details. We will contact you shortly.
       </p>
@@ -139,7 +141,7 @@ export default function ContactUs() {
           {constraints && (
             <motion.div
               ref={containerRef}
-              drag="x"
+              drag={!process.env.NEXT_PUBLIC_LIGHTHOUSE}
               dragMomentum={false}
               dragElastic={0.1}
               onDragEnd={(_, info) => {
@@ -167,6 +169,8 @@ export default function ContactUs() {
                 href="https://wa.me/916281045377"
                 target="_blank"
                 className="flex items-center justify-center w-14 h-14 rounded-full bg-green-600 text-white-bold shadow-lg active:scale-95 transition"
+                aria-label="Contact on WhatsApp"
+                rel="noopener noreferrer"
               >
                 <div className="relative group">
                   <FaWhatsapp className="text-2xl" />
@@ -179,6 +183,7 @@ export default function ContactUs() {
               <a
                 href="tel:+916281045377"
                 className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 text-white shadow-lgactive:scale-95 transition"
+                rel="noopener noreferrer"
               >
 
                 <div className="relative group">
@@ -193,6 +198,7 @@ export default function ContactUs() {
                 href="https://instagram.com/yourprofile"
                 target="_blank"
                 className="flex items-center justify-center w-14 h-14 rounded-full bg-pink-600 text-white shadow-lgactive:scale-95 transition"
+                rel="noopener noreferrer"
               >
                 <div className="relative group">
                   <FaInstagram className="text-2xl" />
@@ -207,6 +213,7 @@ export default function ContactUs() {
                 href="https://facebook.com/yourpage"
                 target="_blank"
                 className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-800 text-white shadow-lgactive:scale-95 transition"
+                rel="noopener noreferrer"
               >
 
                 <div className="relative group">
@@ -222,6 +229,7 @@ export default function ContactUs() {
                 href="https://g.page/your-business-profile"
                 target="_blank"
                 className="flex items-center justify-center w-14 h-14 rounded-full bg-red-600 text-white shadow-lgactive:scale-95 transition"
+                rel="noopener noreferrer"
               >
                 <div className="relative group">
                   <FaGoogle className="text-2xl" />
@@ -236,53 +244,38 @@ export default function ContactUs() {
         </>
 
       )}
-      {/* {!ctaOpen && constraints && (
+
+      {!ctaOpen && constraints && (
         <motion.button
-          drag
+          drag={!process.env.NEXT_PUBLIC_LIGHTHOUSE}
           dragMomentum={false}
           dragElastic={0.1}
           dragConstraints={constraints}
-          onClick={() => setCtaOpen(true)}
+          // onClick={() => setCtaOpen(true)} 
+          onClick={() => {
+            setPulseActive(false);
+            setCtaOpen(true);
+          }}
+
           whileTap={{ scale: 0.95 }}
-          className="fixed top-1/2 right-5 -translate-y-1/2 z-50 flex flex-col items-center bg-white-800 rounded-full p-2 shadow-md"
+          initial={{ scale: 1 }}
+          animate={pulseActive ? { scale: [1, 1.08, 1] } : { scale: 1 }}
+
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className=" fixed top-1/2 right-5 -translate-y-1/2 z-50 flex flex-col items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-xl"
         >
           <Image
             src="/images/beauty-care.png"
             alt="Open contact options"
-            width={36}
-            height={36}
+            width={48}
+            height={50}
           />
-
-          <span className="text-[10px] mt-1.9 font-bold text-yellow-700">
-            Contact
-          </span>
         </motion.button>
-      )} */}
-        {!ctaOpen && constraints && (
-          <motion.button
-            drag
-            dragMomentum={false}
-            dragElastic={0.1}
-            dragConstraints={constraints}
-            onClick={() => setCtaOpen(true)}
-            whileTap={{ scale: 0.95 }}
-            initial={{ scale: 1 }}
-            animate={{ scale: [1, 1.08, 1] }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className=" fixed top-1/2 right-5 -translate-y-1/2 z-50 flex flex-col items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-xl"
-          >
-            <Image
-              src="/images/beauty-care.png"
-              alt="Open contact options"
-              width={48}
-              height={50}
-            />
-          </motion.button>
-        )}
+      )}
 
 
     </section>

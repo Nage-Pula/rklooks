@@ -24,46 +24,46 @@ export default function Pricing() {
   ];
 
   return (
-    <section className="px-6 py-16">
+    <section id="pricing" className="px-6 py-16">
       <div className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-slate-50 to-white border border-slate-200 shadow-md px-6 py-12 text-center">
-      <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900">
-        Pricing
-      </h2>
+        <h2 id="pricing-heading" className="text-2xl sm:text-3xl font-semibold text-slate-900">
+          Pricing
+        </h2>
 
-      <p className="mt-2 text-lg text-gray-600">
-        Transparent pricing. No hidden surprises.
-      </p>
+        <p className="mt-2 text-lg text-gray-600">
+          Transparent pricing. No hidden surprises.
+        </p>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-        {plans.map((plan, index) => (
-          <div
-            key={index}
-            className={`rounded-2xl border ${plan.border} ${plan.cardBg} p-6 shadow-sm`}
-          >
-            <p className="text-xl font-medium text-gray-900">
-              {plan.title}
-            </p>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`rounded-2xl border ${plan.border} ${plan.cardBg} p-6 shadow-sm`}
+            >
+              <p className="text-xl font-medium text-gray-900">
+                {plan.title}
+              </p>
 
-            <p className={`mt-4 text-3xl font-bold ${plan.priceColor}`}>
-              {plan.price}
-            </p>
+              <p className={`mt-4 text-3xl font-bold ${plan.priceColor}`}>
+                {plan.price}
+              </p>
 
-            <p className="mt-2 text-sm text-gray-700">
-              Based on patch size, hair type, and system quality.
-            </p>
+              <p className="mt-2 text-sm text-gray-700">
+                Based on patch size, hair type, and system quality.
+              </p>
 
-            <ul className="mt-6 space-y-2 text-sm text-gray-800 text-left">
-              <li>• Natural appearance</li>
-              <li>• Skin-safe materials</li>
-              <li>• Comfortable daily wear</li>
-            </ul>
+              <ul className="mt-6 space-y-2 text-sm text-gray-800 text-left">
+                <li>• Natural appearance</li>
+                <li>• Skin-safe materials</li>
+                <li>• Comfortable daily wear</li>
+              </ul>
 
-            <p className="mt-2 text-sm text-slate-600">
-              Final pricing after consultation.
-            </p>
-          </div>
-        ))}
-      </div>
+              <p className="mt-2 text-sm text-slate-600">
+                Final pricing after consultation.
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
