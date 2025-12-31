@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import {
   FaUser,
@@ -10,6 +11,7 @@ import {
   FaFacebook,
   FaGoogle,
 } from "react-icons/fa";
+
 
 export default function ContactUs() {
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -96,46 +98,52 @@ export default function ContactUs() {
       <iframe name="hidden_iframe" style={{ display: "none" }} />
 
       {/* Sticky CTA icons */}
-      <div className="fixed bottom-20 right-5 z-50 flex flex-col gap-3">
+      <motion.div
+        drag
+        dragMomentum={true}
+        dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+        className="fixed bottom-24 right-6 z-50 flex flex-col gap-4 touch-none"
+      >
+
         <a
           href="https://wa.me/916281045377"
           target="_blank"
-          className="flex items-center justify-center w-12 h-12 rounded-full bg-green-600 text-white shadow-lg"
+          className="flex items-center justify-center w-14 h-14 rounded-full bg-green-600 text-white-bold shadow-lg"
         >
-          <FaWhatsapp />
+          <FaWhatsapp className="text-2xl" />
         </a>
 
         <a
           href="tel:+916281045377"
-          className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white shadow-lg"
+          className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 text-white shadow-lg"
         >
-          <FaPhoneAlt />
+          <FaPhoneAlt className="text-2xl" />
         </a>
 
         <a
           href="https://instagram.com/yourprofile"
           target="_blank"
-          className="flex items-center justify-center w-12 h-12 rounded-full bg-pink-600 text-white shadow-lg"
+          className="flex items-center justify-center w-14 h-14 rounded-full bg-pink-600 text-white shadow-lg"
         >
-          <FaInstagram />
+          <FaInstagram className="text-2xl" />
         </a>
 
         <a
           href="https://facebook.com/yourpage"
           target="_blank"
-          className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-800 text-white shadow-lg"
+          className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-800 text-white shadow-lg"
         >
-          <FaFacebook />
+          <FaFacebook className="text-2xl" />
         </a>
 
         <a
           href="https://g.page/your-business-profile"
           target="_blank"
-          className="flex items-center justify-center w-12 h-12 rounded-full bg-red-600 text-white shadow-lg"
+          className="flex items-center justify-center w-14 h-14 rounded-full bg-red-600 text-white shadow-lg"
         >
-          <FaGoogle />
+          <FaGoogle className="text-2xl" />
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -9,7 +9,8 @@ const images = [
 
 export default function Gallery() {
   return (
-    <section className="px-4 py-16 bg-white">
+    <section className="px-4 py-16">
+      <div className="mx-auto max-w-6xl rounded-3xl bg-gradient-to-br from-white via-slate-50 to-white border border-slate-200 shadow-md px-6 py-16">
       <h2 className="text-2xl sm:text-3xl font-semibold text-center text-gray-900">
         Our Work
       </h2>
@@ -32,6 +33,7 @@ export default function Gallery() {
             />
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

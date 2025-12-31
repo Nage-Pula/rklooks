@@ -24,8 +24,9 @@ export default function Pricing() {
   ];
 
   return (
-    <section className="px-6 py-16 bg-white text-center">
-      <h2 className="text-3xl font-semibold tracking-tight text-gray-900">
+    <section className="px-6 py-16">
+      <div className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-slate-50 to-white border border-slate-200 shadow-md px-6 py-12 text-center">
+      <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900">
         Pricing
       </h2>
 
@@ -57,11 +58,12 @@ export default function Pricing() {
               <li>• Comfortable daily wear</li>
             </ul>
 
-            <p className="mt-6 text-xs text-gray-500">
+            <p className="mt-2 text-sm text-slate-600">
               Final pricing after consultation.
             </p>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
