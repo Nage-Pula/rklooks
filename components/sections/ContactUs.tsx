@@ -1,7 +1,9 @@
 "use client";
 
+import { Scissors } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   FaUser,
   FaCommentDots,
@@ -16,6 +18,40 @@ import {
 export default function ContactUs() {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [success, setSuccess] = useState(false);
+  const [ctaPos, setCtaPos] = useState({ x: 0, y: 0 });
+  const [showCTA, setShowCTA] = useState(true);
+  const lastScrollY = useRef(0);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [ctaOpen, setCtaOpen] = useState(true);
+  const [constraints, setConstraints] = useState<{
+    top: number;
+    bottom: number;
+    left: number;
+    right: number;
+  } | null>(null);
+
+
+
+  useEffect(() => {
+    const updateConstraints = () => {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+
+      setConstraints({
+        top: -h / 2 + 120,
+        bottom: h / 2 - 120,
+        left: -w + 96,
+        right: 0,
+      });
+    };
+
+    updateConstraints();
+    window.addEventListener("resize", updateConstraints);
+    return () => window.removeEventListener("resize", updateConstraints);
+  }, []);
+
+
+
 
   const handleSubmit = () => {
     setTimeout(() => {
@@ -98,52 +134,131 @@ export default function ContactUs() {
       <iframe name="hidden_iframe" style={{ display: "none" }} />
 
       {/* Sticky CTA icons */}
-      <motion.div
-        drag
-        dragMomentum={true}
-        dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-        className="fixed bottom-24 right-6 z-50 flex flex-col gap-4 touch-none"
-      >
+      {ctaOpen && (
+        <>
+          {constraints && (
+            <motion.div
+              ref={containerRef}
+              drag="x"
+              dragMomentum={false}
+              dragElastic={0.1}
+              onDragEnd={(_, info) => {
+                const screenWidth = window.innerWidth;
+                const snapX = info.point.x > screenWidth / 2 ? 0 : -(screenWidth / 2 - 80);
+                setCtaPos({
+                  x: snapX,
+                  y: ctaPos.y + info.offset.y,
+                });
+              }}
+              dragConstraints={constraints ?? undefined}
 
-        <a
-          href="https://wa.me/916281045377"
-          target="_blank"
-          className="flex items-center justify-center w-14 h-14 rounded-full bg-green-600 text-white-bold shadow-lg"
-        >
-          <FaWhatsapp className="text-2xl" />
-        </a>
+              animate={{ x: ctaPos.x, y: ctaPos.y }}
+              // animate={{ x: ctaPos.x, y: ctaPos.y, opacity: showCTA ? 1 : 0 }}
+              className="fixed top-1/2 right-6 -translate-y-1/2 z-50 flex flex-col items-center gap-4">
+              <button
+                onClick={() => setCtaOpen(false)}
+                className="flex items-center justify-center w-14 h-14 rounded-full shadow-lg active:scale-95 transition"
+              >
+                <Scissors className="text-2xl text-red-500" />
+              </button>
 
-        <a
-          href="tel:+916281045377"
-          className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 text-white shadow-lg"
-        >
-          <FaPhoneAlt className="text-2xl" />
-        </a>
 
-        <a
-          href="https://instagram.com/yourprofile"
-          target="_blank"
-          className="flex items-center justify-center w-14 h-14 rounded-full bg-pink-600 text-white shadow-lg"
-        >
-          <FaInstagram className="text-2xl" />
-        </a>
+              <a
+                href="https://wa.me/916281045377"
+                target="_blank"
+                className="flex items-center justify-center w-14 h-14 rounded-full bg-green-600 text-white-bold shadow-lg active:scale-95 transition"
+              >
+                <div className="relative group">
+                  <FaWhatsapp className="text-2xl" />
+                  <span className="absolute right-12 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-md bg-black px-2 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition">
+                    WhatsApp Me
+                  </span>
+                </div>
+              </a>
 
-        <a
-          href="https://facebook.com/yourpage"
-          target="_blank"
-          className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-800 text-white shadow-lg"
-        >
-          <FaFacebook className="text-2xl" />
-        </a>
+              <a
+                href="tel:+916281045377"
+                className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-600 text-white shadow-lgactive:scale-95 transition"
+              >
 
-        <a
-          href="https://g.page/your-business-profile"
-          target="_blank"
-          className="flex items-center justify-center w-14 h-14 rounded-full bg-red-600 text-white shadow-lg"
+                <div className="relative group">
+                  <FaPhoneAlt className="text-2xl" />
+                  <span className="absolute right-12 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-md bg-black px-2 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition">
+                    Call Now
+                  </span>
+                </div>
+              </a>
+
+              <a
+                href="https://instagram.com/yourprofile"
+                target="_blank"
+                className="flex items-center justify-center w-14 h-14 rounded-full bg-pink-600 text-white shadow-lgactive:scale-95 transition"
+              >
+                <div className="relative group">
+                  <FaInstagram className="text-2xl" />
+                  <span className="absolute right-12 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-md bg-black px-2 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition">
+                    Instagram
+                  </span>
+                </div>
+
+              </a>
+
+              <a
+                href="https://facebook.com/yourpage"
+                target="_blank"
+                className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-800 text-white shadow-lgactive:scale-95 transition"
+              >
+
+                <div className="relative group">
+                  <FaFacebook className="text-2xl" />
+                  <span className="absolute right-12 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-md bg-black px-2 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition">
+                    Facebook
+                  </span>
+                </div>
+
+              </a>
+
+              <a
+                href="https://g.page/your-business-profile"
+                target="_blank"
+                className="flex items-center justify-center w-14 h-14 rounded-full bg-red-600 text-white shadow-lgactive:scale-95 transition"
+              >
+                <div className="relative group">
+                  <FaGoogle className="text-2xl" />
+                  <span className="absolute right-12 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-md bg-black px-2 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition">
+                    Google Reviews
+                  </span>
+                </div>
+              </a>
+
+            </motion.div>
+          )}
+        </>
+
+      )}
+      {!ctaOpen && constraints && (
+        <motion.button
+          drag
+          dragMomentum={false}
+          dragElastic={0.1}
+          dragConstraints={constraints}
+          onClick={() => setCtaOpen(true)}
+          whileTap={{ scale: 0.95 }}
+          className="fixed top-1/2 right-5 -translate-y-1/2 z-50 flex flex-col items-center bg-white-800 rounded-full p-2 shadow-md"
         >
-          <FaGoogle className="text-2xl" />
-        </a>
-      </motion.div>
+          <Image
+            src="/images/beauty-care.png"
+            alt="Open contact options"
+            width={36}
+            height={36}
+          />
+
+          <span className="text-[10px] mt-1.9 font-bold text-yellow-700">
+            Contact
+          </span>
+        </motion.button>
+      )}
+
     </section>
   );
 }
