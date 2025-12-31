@@ -1,0 +1,18 @@
+export default function Location() {
+  return (
+    <section className="px-6 py-16 bg-gray-50 text-center">
+      <h2 className="text-2xl font-semibold">Visit Us</h2>
+      <p className="mt-2">
+        Opp. 9th Line, Padda Cheruvu, Narasaraopet – 522601
+      </p>
+
+      <div className="mt-6 max-w-3xl mx-auto">
+        <iframe
+          src="https://www.google.com/maps?q=Narasaraopet&output=embed"
+          className="w-full h-80 rounded-xl border"
+          loading="lazy"
+        />
+      </div>
+    </section>
+  );
+}
