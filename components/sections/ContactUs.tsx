@@ -1,24 +1,32 @@
 "use client";
 
+import { useRef, useState } from "react";
 import {
+  FaUser,
+  FaCommentDots,
   FaWhatsapp,
   FaPhoneAlt,
   FaInstagram,
   FaFacebook,
   FaGoogle,
 } from "react-icons/fa";
-import { use, useRef } from "react";
 
 export default function ContactUs() {
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = () => {
+    setTimeout(() => {
+      formRef.current?.reset();
+      setSuccess(true);
+      setTimeout(() => setSuccess(false), 3000);
+    }, 300);
+  };
 
   return (
-    <section className="px-6 py-16 bg-white text-center">
-      <h2 className="text-3xl font-semibold text-gray-900">
-        Contact Us
-      </h2>
-
-      <p className="mt-2 text-lg text-gray-600">
+    <section className="px-6 py-16 text-center bg-gradient-to-b from-black to-gray-900 text-white">
+      <h2 className="text-3xl font-semibold text-white">Contact Us</h2>
+      <p className="mt-2 text-lg text-gray-300">
         Leave your details. We will contact you shortly.
       </p>
 
@@ -27,99 +35,105 @@ export default function ContactUs() {
         action="https://docs.google.com/forms/d/e/1FAIpQLSdLNd4d5y3sGSrXzkCogyA6uzbNGjYuMLNPwshcK1p7BqVodw/formResponse"
         method="POST"
         target="hidden_iframe"
-        onSubmit={() => {
-          setTimeout(() => {
-            formRef.current?.reset();
-          }, 300);
-        }}
+        onSubmit={handleSubmit}
         className="mt-8 max-w-xl mx-auto grid gap-4 text-left"
       >
-        <input
-          type="text"
-          name="entry.640544721"
-          required
-          placeholder="Your Name"
-          className="w-full rounded-lg border border-gray-300 px-4 py-3"
-        />
+        {/* Honeypot */}
+        <input type="text" name="company" className="hidden" />
 
-        <input
-          type="tel"
-          name="entry.145696134"
-          required
-          pattern="[0-9]{10}"
-          maxLength={10}
-          placeholder="10-digit Mobile Number"
-          className="w-full rounded-lg border border-gray-300 px-4 py-3"
-        />
+        {/* Name */}
+        <div className="relative">
+          <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
+          <input
+            type="text"
+            name="entry.640544721"
+            required
+            placeholder="Your Name"
+            className="w-full rounded-lg border border-gray-300 bg-white px-12 py-3 text-gray-900"
+          />
+        </div>
 
-        <textarea
-          name="entry.1963353475"
-          rows={4}
-          placeholder="Your Requirement (optional)"
-          className="w-full rounded-lg border border-gray-300 px-4 py-3"
-        />
+        {/* Phone */}
+        <div className="relative">
+          <FaPhoneAlt className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
+          <input
+            type="tel"
+            name="entry.145696134"
+            required
+            pattern="[0-9]{10}"
+            maxLength={10}
+            placeholder="10-digit Mobile Number"
+            className="w-full rounded-lg border border-gray-300 bg-white px-12 py-3 text-gray-900"
+          />
+        </div>
 
+        {/* Requirement */}
+        <div className="relative">
+          <FaCommentDots className="absolute left-4 top-4 text-gray-500" />
+          <textarea
+            name="entry.1963353475"
+            rows={4}
+            placeholder="Your Requirement (optional)"
+            className="w-full rounded-lg border border-gray-300 bg-white px-12 py-3 text-gray-900"
+          />
+        </div>
+
+        {/* Submit */}
         <button
           type="submit"
-          className="rounded-lg bg-black px-6 py-3 text-white font-medium"
+          className="w-full rounded-lg py-3 font-semibold text-white bg-gradient-to-r from-black via-gray-800 to-black hover:opacity-90 transition"
         >
           Submit
         </button>
       </form>
 
+      {success && (
+        <p className="mt-4 text-green-500 font-medium animate-pulse">
+          ✅ Thank you! We’ll contact you shortly.
+        </p>
+      )}
+
       <iframe name="hidden_iframe" style={{ display: "none" }} />
 
-      {/* hidden iframe prevents redirect */}
-      <iframe
-        name="hidden_iframe"
-        style={{ display: "none" }}
-      />
-
-
-      {/* QUICK CONTACT ICONS */}
-      <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-4xl mx-auto">
+      {/* Sticky CTA icons */}
+      <div className="fixed bottom-20 right-5 z-50 flex flex-col gap-3">
         <a
           href="https://wa.me/916281045377"
           target="_blank"
-          className="flex flex-col items-center gap-2 p-4 rounded-xl border bg-green-50"
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-green-600 text-white shadow-lg"
         >
-          <FaWhatsapp className="text-3xl text-green-600" />
-          <span className="text-sm">WhatsApp</span>
+          <FaWhatsapp />
         </a>
 
         <a
           href="tel:+916281045377"
-          className="flex flex-col items-center gap-2 p-4 rounded-xl border bg-blue-50"
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white shadow-lg"
         >
-          <FaPhoneAlt className="text-3xl text-blue-600" />
-          <span className="text-sm">Call</span>
+          <FaPhoneAlt />
         </a>
 
         <a
           href="https://instagram.com/yourprofile"
           target="_blank"
-          className="flex flex-col items-center gap-2 p-4 rounded-xl border bg-pink-50"
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-pink-600 text-white shadow-lg"
         >
-          <FaInstagram className="text-3xl text-pink-600" />
-          <span className="text-sm">Instagram</span>
+          <FaInstagram />
         </a>
 
         <a
           href="https://facebook.com/yourpage"
           target="_blank"
-          className="flex flex-col items-center gap-2 p-4 rounded-xl border bg-blue-100"
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-800 text-white shadow-lg"
         >
-          <FaFacebook className="text-3xl text-blue-700" />
-          <span className="text-sm">Facebook</span>
+          <FaFacebook />
         </a>
 
         <a
           href="https://g.page/your-business-profile"
           target="_blank"
-          className="flex flex-col items-center gap-2 p-4 rounded-xl border bg-red-50"
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-red-600 text-white shadow-lg"
         >
-          <FaGoogle className="text-3xl text-red-600" />
-          <span className="text-sm">Google</span>
+          <FaGoogle />
         </a>
       </div>
     </section>
