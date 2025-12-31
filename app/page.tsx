@@ -4,6 +4,10 @@ import Pricing from "@/components/sections/Pricing";
 import Location from "@/components/sections/Location";
 import Footer from "@/components/sections/Footer";
 import Gallery from "@/components/sections/Gallery";
+import ContactUs from "@/components/sections/ContactUs";
+
+
+
 
 export default function Home() {
   return (
@@ -13,6 +17,7 @@ export default function Home() {
       <Gallery />
       <Pricing />
       <Location />
+      <ContactUs />
       <Footer />
     </main>
   );
