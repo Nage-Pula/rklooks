@@ -5,6 +5,16 @@ export default function Location() {
       <p className="mt-2">
         Opp. 9th Line, Padda Cheruvu, Narasaraopet – 522601
       </p>
+      <div className="mt-4 flex justify-center">
+        <a
+          href="https://g.page/rk-looks-hair-studio"
+          target="_blank"
+          className="rounded-lg border border-gray-300 px-5 py-2 text-sm font-medium"
+        >
+          View on Google Maps
+        </a>
+      </div>
+
 
       <div className="mt-6 max-w-3xl mx-auto">
         <iframe
