@@ -14,7 +14,7 @@ export const metadata = {
     "clip & glue systems Narasaraopet",
     "professional haircuts",
     "hair patch solutions",
-    "hair replacement services",  
+    "hair replacement services",
     "Narasaaraopet hair studio",
     "best haircuts Narasaraopet",
     "affordable hair patch Narasaraopet",
@@ -59,7 +59,7 @@ export const metadata = {
     "hair care clinics",
     "hair care centers",
     "hair care facilities",
-    
+
   ],
 };
 

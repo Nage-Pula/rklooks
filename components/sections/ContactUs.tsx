@@ -157,9 +157,9 @@ export default function ContactUs() {
               className="fixed top-1/2 right-6 -translate-y-1/2 z-50 flex flex-col items-center gap-4">
               <button
                 onClick={() => setCtaOpen(false)}
-                className="flex items-center justify-center w-14 h-14 rounded-full shadow-lg active:scale-95 transition"
+                className="flex items-center justify-center w-7 h-7 rounded-full shadow-lg active:scale-95 transition bg-gradient-to-br from-amber-400 to-amber-600"
               >
-                <Scissors className="text-2xl text-red-500" />
+                <Scissors className="text-black-500" />
               </button>
 
 
@@ -236,7 +236,7 @@ export default function ContactUs() {
         </>
 
       )}
-      {!ctaOpen && constraints && (
+      {/* {!ctaOpen && constraints && (
         <motion.button
           drag
           dragMomentum={false}
@@ -257,7 +257,33 @@ export default function ContactUs() {
             Contact
           </span>
         </motion.button>
-      )}
+      )} */}
+        {!ctaOpen && constraints && (
+          <motion.button
+            drag
+            dragMomentum={false}
+            dragElastic={0.1}
+            dragConstraints={constraints}
+            onClick={() => setCtaOpen(true)}
+            whileTap={{ scale: 0.95 }}
+            initial={{ scale: 1 }}
+            animate={{ scale: [1, 1.08, 1] }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className=" fixed top-1/2 right-5 -translate-y-1/2 z-50 flex flex-col items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-xl"
+          >
+            <Image
+              src="/images/beauty-care.png"
+              alt="Open contact options"
+              width={48}
+              height={50}
+            />
+          </motion.button>
+        )}
+
 
     </section>
   );
