@@ -1,48 +1,32 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 export default function Hero() {
   return (
-    <section className="px-6 py-20 text-center overflow-hidden">
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl md:text-5xl font-bold"
-      >
-        RK LOOKS
-      </motion.h1>
+    <section className="px-4 py-16 sm:py-24 text-center bg-white">
+      <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gray-900">
+        <span className="text-pink-600">RK</span> <span className="text-white-600">LOOKS</span> 
+      </h1>
+      <h3 className="mt-4 text-xl sm:text-2xl font-semibold text-gray-800">
+        The Best Haircut & Hair Patch Salon in Narasaraopet
+      </h3>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        className="mt-4 text-lg text-gray-600"
-      >
-        Professional Haircuts & Hair Patch Solutions in Narasaraopet
-      </motion.p>
+      <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-xl mx-auto">
+        Professional Haircuts, Hair Patch & Grooming Services in Narasaraopet
+      </p>
 
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.5 }}
-        className="mt-6 flex justify-center gap-4"
-      >
+      <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
         <a
           href="tel:6281045377"
-          className="rounded-md bg-black px-6 py-3 text-white"
+          className="rounded-lg bg-gray-900 px-6 py-3 text-white text-base font-medium"
         >
           Call Now
         </a>
         <a
           href="https://wa.me/916281045377"
           target="_blank"
-          className="rounded-md border px-6 py-3"
+          className="rounded-lg border border-gray-300 px-6 py-3 text-base font-medium text-gray-900"
         >
           WhatsApp
         </a>
-      </motion.div>
+      </div>
     </section>
   );
 }
