@@ -5,7 +5,7 @@ export default function Loader() {
                 {/* Spinner */}
                 <span className="absolute inline-block h-14 w-14 animate-spin rounded-full border-4 border-amber-500 border-t-transparent" />
                 {/* Brand */}
-                <span className="z-10 bg-white px-3 text-lg font-extrabold tracking-wide text-slate-900">
+                <span className="z-10 px-3 text-lg font-extrabold tracking-wide text-slate-900">
                     RK LOOKS
                 </span>
             </div>
