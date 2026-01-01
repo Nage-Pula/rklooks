@@ -63,7 +63,7 @@ export default function Navbar() {
         <header
             role="navigation"
             aria-label="Primary navigation"
-            className={`fixed top-0 inset-x-0 z-50 transition-all
+            className={`fixed top-0 inset-x-0 z-50 transition-all bg-gradient-to-br from-amber-50 via-rose-50 to-white
         ${scrolled
                     ? "bg-white/90 backdrop-blur shadow-md"
                     : "bg-white/70 backdrop-blur"
