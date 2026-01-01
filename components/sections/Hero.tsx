@@ -25,7 +25,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900"
+              className="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900"
             >
               <span className="text-pink-600">RK</span>{" "}
               <span className="text-slate-900">LOOKS</span>
