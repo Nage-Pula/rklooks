@@ -142,7 +142,7 @@ export default function ContactUs() {
           dragMomentum={false}
           dragElastic={0.1}
           dragConstraints={constraints}
-          className="fixed top-1/2 right-6 -translate-y-1/2 z-50 flex flex-col items-center gap-4"
+          className="fixed top-1/2 right-6 -translate-y-1/2 z-50 flex flex-col items-center gap-4 "
         >
           <button
             onClick={() => setCtaOpen(false)}
@@ -152,46 +152,59 @@ export default function ContactUs() {
           </button>
 
           <a
+            href="/blog"
+            className="group flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-rose-500 text-white shadow-lg transition-all hover:scale-105 overflow-hidden"
+          >
+            <img
+              src="/images/gallery/rklookslogo.jpeg"
+              alt="RK Looks Blog"
+              className="w-14 h-14 group flex items-center justify-center w-14 h-14 rounded-full bg-white/20 backdrop-blur border border-white/30 shadow-lg transition-all hover:scale-105 overflow-hidden"
+
+            />
+          </a>
+
+
+          <a
             href="https://wa.me/916281045377"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 flex items-center justify-center rounded-full bg-green-600 text-white shadow-lg"
+            className="w-14 h-14 flex items-center justify-center rounded-full bg-green-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
           >
-            <FaWhatsapp className="text-2xl" />
+            <FaWhatsapp className="text-3xl" />
           </a>
 
           <a
             href="tel:+916281045377"
-            className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-600 text-white shadow-lg"
+            className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
           >
-            <FaPhoneAlt className="text-2xl" />
+            <FaPhoneAlt className="text-3xl" />
           </a>
 
           <a
             href="https://instagram.com/yourprofile"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 flex items-center justify-center rounded-full bg-pink-600 text-white shadow-lg"
+            className="w-14 h-14 flex items-center justify-center rounded-full bg-pink-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
           >
-            <FaInstagram className="text-2xl" />
+            <FaInstagram className="text-3xl" />
           </a>
 
           <a
             href="https://facebook.com/yourpage"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-800 text-white shadow-lg"
+            className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-800 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
           >
-            <FaFacebook className="text-2xl" />
+            <FaFacebook className="text-3xl" />
           </a>
 
           <a
             href="https://g.page/your-business-profile"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 flex items-center justify-center rounded-full bg-red-600 text-white shadow-lg"
+            className="w-14 h-14 flex items-center justify-center rounded-full bg-red-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
           >
-            <FaGoogle className="text-2xl" />
+            <FaGoogle className="text-3xl" />
           </a>
         </motion.div>
       )}
@@ -211,12 +224,18 @@ export default function ContactUs() {
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           className="fixed top-1/2 right-5 -translate-y-1/2 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-xl flex items-center justify-center"
         >
-          <Image
+          {/* <Image
             src="/images/beauty-care.png"
             alt="Open contact options"
             width={40}
             height={40}
-          />
+          /> */}
+          <img
+              src="/images/gallery/rklookslogo.jpeg"
+              alt="RK Looks Blog"
+              className="w-16 h-16 group flex items-center justify-center w-14 h-14 rounded-full bg-white/20 backdrop-blur border border-white/30 shadow-lg transition-all hover:scale-105 overflow-hidden"
+
+            />
         </motion.button>
       )}
     </section>

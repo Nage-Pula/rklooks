@@ -11,6 +11,8 @@ import {
     Phone,
     Home,
 } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+
 
 const navItems = [
     { id: "home", label: "Home", icon: Home },
@@ -21,10 +23,14 @@ const navItems = [
     { id: "contact", label: "Contact", icon: Phone },
 ];
 
+
+
 export default function Navbar() {
     const [active, setActive] = useState("home");
     const [open, setOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const router = useRouter();
+    const pathname = usePathname();
 
     // Scroll spy
     useEffect(() => {
@@ -54,10 +60,22 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+    // const handleClick = (id: string) => {
+    //     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    //     setOpen(false);
+    // };
     const handleClick = (id: string) => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
         setOpen(false);
+
+        // If already on home, scroll
+        if (pathname === "/") {
+            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        } else {
+            // Navigate to home + section
+            router.push(`/#${id}`);
+        }
     };
+
 
     return (
         <header
@@ -76,9 +94,14 @@ export default function Navbar() {
                     <span className="text-pink-600">RK</span>{" "}
                     <span className="text-slate-900">LOOKS</span>
                 </span> */}
-                <span className="font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-pink-400 to-pink-600">
+
+                <button
+                    onClick={() => router.push("/")}
+                    className="font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-pink-400 to-pink-600"
+                >
                     RK LOOKS
-                </span>
+                </button>
+
 
 
 
@@ -105,7 +128,7 @@ export default function Navbar() {
                             />
                             {label}
                             {active === id && (
-                                <span className="absolute -bottom-2 left-1/2 h-1 w-6 -translate-x-1/2 rounded-full bg-gradient-to-r from-amber-500 to-rose-500" />
+                                <span className="absolute -bottom-2 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-gradient-to-r from-amber-500 to-rose-500" />
                             )}
                         </button>
                     ))}

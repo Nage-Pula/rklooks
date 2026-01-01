@@ -10,6 +10,7 @@ export default function Home() {
   return (
     <main className="min-h-screen space-y-4 sm:space-y-8">
       <Hero />
+
       <Services />
       <Gallery />
       <Pricing />
