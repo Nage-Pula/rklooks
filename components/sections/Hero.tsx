@@ -88,7 +88,7 @@ export default function Hero() {
           </div>
           <a
             href="/blog"
-            className="group mt-6 align-center flex justify-center items-center gap-2 rounded-full bg-gradient-to-r from-yellow-500 via-green-500 to-amber-500 px-4 py-4 text-sm sm:text-base font-extrabold text-black-700 shadow-md transition-all hover:brightness-110"
+            className="group mt-6 align-center flex justify-center items-center gap-2 rounded-full bg-gradient-to-r from-yellow-500 via-green-500 to-amber-500 px-4 py-4 text-sm sm:text-base font-bold text-white shadow-md transition-all hover:brightness-110"
           >
             See Real Transformations from Our Chair
             <span className="animate-pulse">→</span>
