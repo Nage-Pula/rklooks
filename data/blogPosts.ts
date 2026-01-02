@@ -4,6 +4,7 @@ export type BlogPost = {
     type: "instagram" | "facebook" | "youtube" | "image" | "testimonial";
     url: string;
     preview?: string;
+    slug?: string;
 };
 
 export const blogPosts: BlogPost[] = [
