@@ -55,13 +55,13 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.4 }}
-              className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+              className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               <a
                 href="tel:6281045377"
-                className="inline-flex items-center gap-3 rounded-xl bg-slate-900 px-8 py-4 text-base font-semibold text-white shadow-md transition hover:bg-slate-800 active:scale-95"
+                className="inline-flex items-center gap-3 rounded-xl bg-slate-900 px-7 py-4 text-base font-semibold text-white shadow-md transition hover:bg-slate-800 active:scale-95"
               >
-                <FaPhone className="text-xl" />
+                <FaPhone className="text-2xl" />
                 Call Now
               </a>
 
@@ -69,17 +69,17 @@ export default function Hero() {
                 href="https://wa.me/916281045377"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 rounded-xl bg-green-600 px-8 py-4 text-base font-semibold text-white shadow-md transition hover:bg-green-500 active:scale-95"
+                className="inline-flex items-center gap-3 rounded-xl bg-green-600 px-6 py-4 text-base font-semibold text-white shadow-md transition hover:bg-green-500 active:scale-95"
               >
-                <FaWhatsapp className="text-xl" />
+                <FaWhatsapp className="text-2xl" />
                 WhatsApp
               </a>
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-amber-500 to-rose-500 px-8 py-4 text-base font-semibold text-white shadow-md transition-all duration-300 hover:shadow-lg hover:brightness-105 active:scale-95"
+                className="group inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-amber-500 to-rose-500 px-5 py-4 text-base font-semibold text-white shadow-md transition-all duration-300 hover:shadow-lg hover:brightness-105 active:scale-95"
               >
                 <span className="flex items-center justify-center h-6 w-6 rounded-full bg-white/20">
-                  <Mail size={18} />
+                  <Mail className="text-2xl" />
                 </span>
                 Contact Us
               </a>
