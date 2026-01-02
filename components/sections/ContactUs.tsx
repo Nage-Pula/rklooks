@@ -153,12 +153,12 @@ export default function ContactUs() {
 
           <a
             href="/blog"
-            className="group flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-rose-500 text-white shadow-lg transition-all hover:scale-105 overflow-hidden"
+            className="group flex items-center justify-center rounded-full  text-white shadow-lg transition-all hover:scale-105 overflow-hidden"
           >
             <img
               src="/images/gallery/rklookslogo.jpeg"
               alt="RK Looks Blog"
-              className="w-14 h-14 group flex items-center justify-center w-14 h-14 rounded-full bg-white/20 backdrop-blur border border-white/30 shadow-lg transition-all hover:scale-105 overflow-hidden"
+              className="w-12 h-12 group flex items-center justify-center w-12 h-12 rounded-full bg-white/20 backdrop-blur border border-white/30 shadow-lg transition-all hover:scale-105 overflow-hidden"
 
             />
           </a>
@@ -168,14 +168,14 @@ export default function ContactUs() {
             href="https://wa.me/916281045377"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 flex items-center justify-center rounded-full bg-green-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
+            className="w-12 h-12 flex items-center justify-center rounded-full bg-green-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
           >
-            <FaWhatsapp className="text-3xl" />
+            <FaWhatsapp className="text-4xl" />
           </a>
 
           <a
             href="tel:+916281045377"
-            className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
+            className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
           >
             <FaPhoneAlt className="text-3xl" />
           </a>
@@ -184,27 +184,27 @@ export default function ContactUs() {
             href="https://instagram.com/yourprofile"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 flex items-center justify-center rounded-full bg-pink-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
+            className="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
           >
-            <FaInstagram className="text-3xl" />
+            <FaInstagram className="text-4xl" />
           </a>
 
           <a
             href="https://facebook.com/yourpage"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-800 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
+            className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-800 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
           >
-            <FaFacebook className="text-3xl" />
+            <FaFacebook className="text-4xl" />
           </a>
 
           <a
             href="https://g.page/your-business-profile"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 flex items-center justify-center rounded-full bg-red-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
+            className="w-12 h-12 flex items-center justify-center rounded-full bg-red-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
           >
-            <FaGoogle className="text-3xl" />
+            <FaGoogle className="text-4xl" />
           </a>
         </motion.div>
       )}
@@ -222,7 +222,7 @@ export default function ContactUs() {
           initial={{ scale: 1 }}
           animate={pulseActive ? { scale: [1, 1.08, 1] } : { scale: 1 }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="fixed top-1/2 right-5 -translate-y-1/2 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-xl flex items-center justify-center"
+          className="fixed top-1/2 right-5 -translate-y-1/2 z-50  rounded-full flex items-center justify-center"
         >
           {/* <Image
             src="/images/beauty-care.png"
@@ -231,11 +231,11 @@ export default function ContactUs() {
             height={40}
           /> */}
           <img
-              src="/images/gallery/rklookslogo.jpeg"
-              alt="RK Looks Blog"
-              className="w-16 h-16 group flex items-center justify-center w-14 h-14 rounded-full bg-white/20 backdrop-blur border border-white/30 shadow-lg transition-all hover:scale-105 overflow-hidden"
+            src="/images/gallery/rklookslogo.jpeg"
+            alt="RK Looks Blog"
+            className="w-13 h-13 group flex items-center justify-center w-13 h-13 rounded-full bg-white/20 backdrop-blur border border-white/30 shadow-lg transition-all hover:scale-110 overflow-hidden"
 
-            />
+          />
         </motion.button>
       )}
     </section>

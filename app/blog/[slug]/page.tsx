@@ -1,19 +1,24 @@
-export default function BlogDetail({ params }: { params: { slug: string } }) {
+import { blogPosts } from "@/data/blogPosts";
+
+export default function BlogDetail({
+    params,
+}: {
+    params: { slug: string };
+}) {
+    const post = blogPosts.find((p) => p.slug === params.slug);
+
+    if (!post) return null;
+
     return (
         <section className="section bg-gradient-to-br from-slate-50 via-white to-slate-100">
             <div className="section-inner max-w-3xl">
-                <h1 className="text-3xl font-extrabold text-slate-900 capitalize">
-                    {params.slug.replaceAll("-", " ")}
+                <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                    {post.title}
                 </h1>
 
-                <p className="mt-4 text-slate-600">
-                    This page will showcase images, reels, testimonials, ratings,
-                    comments, and real work done at RK Looks.
-                </p>
-
-                <p className="mt-6 text-sm text-slate-500">
-                    🚧 Content will be synced from Instagram / manual uploads.
-                </p>
+                <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-4 shadow-lg">
+                    {/* embed logic here */}
+                </div>
             </div>
         </section>
     );

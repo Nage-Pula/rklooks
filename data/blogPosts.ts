@@ -3,6 +3,7 @@ export type BlogPost = {
     title: string;
     type: "instagram" | "facebook" | "youtube" | "image" | "testimonial";
     url: string;
+    preview?: string;
 };
 
 export const blogPosts: BlogPost[] = [
@@ -11,6 +12,7 @@ export const blogPosts: BlogPost[] = [
         title: "బట్టతలతో భాద పడ్డ వ్యక్తి కి హేర్ పాచ్ వర్క్",
         type: "instagram",
         url: "https://www.instagram.com/reel/DJKO7uOydS-/?igsh=MXR6dHZld3V3aW4xaw==",
+        preview: "/images/gallery/rklookslogo.jpeg",
     },
     {
         id: "2",
