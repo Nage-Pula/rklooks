@@ -199,7 +199,7 @@ export default function ContactUs() {
           </a>
 
           <a
-            href="https://www.google.com/search?q=RK+LOOKS+HAIR+STUDIO+AND+BEAUTY+SeLoON&rlz=1C5GCEM_enIN1169IN1169&oq=rk+&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MggIARBFGCcYOzIGCAIQRRg7MgYIAxBFGDkyBwgEEAAYgAQyCggFEAAYsQMYgAQyBggGEEUYPDIGCAcQRRg80gEIMzAxMWowajSoAgCwAgE&sourceid=chrome&ie=UTF-8#vhid=/g/11vyc9130z&vssid=dcptpi"
+            href="https://www.google.com/search?q=RK+LOOKS+HAIR+STUDIO+AND+BEAUTY+SELOON&sca_esv=2f4ed381b998a4d8&rlz=1C5GCEM_enIN1169IN1169&sxsrf=AE3TifNUFnQXrYWvQHuiYLdQNfevefMdpA%3A1767448049525&ei=8R1ZaezXH5KKnesPj-yKiA0&ved=0ahUKEwislJqJwe-RAxUSRWcHHQ-2AtEQ4dUDCBE&uact=5&oq=RK+LOOKS+HAIR+STUDIO+AND+BEAUTY+SELOON&gs_lp=Egxnd3Mtd2l6LXNlcnAiJlJLIExPT0tTIEhBSVIgU1RVRElPIEFORCBCRUFVVFkgU0VMT09OMgcQIxiwAhgnMggQABiABBiiBDIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBEiKHVCZA1iYGnABeAGQAQCYAZMBoAGgBaoBAzIuNLgBA8gBAPgBAZgCB6ACwgXCAg0QABiwAxiSAxjWBBhHwgIKEAAYsAMY1gQYR8ICDRAAGLADGNYEGEcYyQPCAgQQIRgVmAMA4gMFEgExIECIBgGQBgiSBwMzLjSgB7oYsgcDMi40uAe-BcIHBTAuNS4yyAcSgAgA&sclient=gws-wiz-serp&lqi=CiVSSyBMT09LUyBIQUlSIFNUVURJTyBBTkQgQkVBVVRZIFNBTE9OSJ6YwrT1uoCACFpBEAAQARACEAMQBBAFEAYYABgBGAIYAxgEGAUiJXJrIGxvb2tzIGhhaXIgc3R1ZGlvIGFuZCBiZWF1dHkgc2Fsb26SARJ1bmlzZXhfaGFpcmRyZXNzZXI#rlimm=12601076590106189567"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-red-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
