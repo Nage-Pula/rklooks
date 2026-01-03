@@ -181,7 +181,7 @@ export default function ContactUs() {
           </a>
 
           <a
-            href="https://instagram.com/yourprofile"
+            href="https://www.instagram.com/rklookshairstudio/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
@@ -190,7 +190,7 @@ export default function ContactUs() {
           </a>
 
           <a
-            href="https://facebook.com/yourpage"
+            href="https://www.facebook.com/profile.php?id=61586119105077"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-800 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
@@ -199,7 +199,7 @@ export default function ContactUs() {
           </a>
 
           <a
-            href="https://g.page/your-business-profile"
+            href="https://www.google.com/search?q=RK+LOOKS+HAIR+STUDIO+AND+BEAUTY+SeLoON&rlz=1C5GCEM_enIN1169IN1169&oq=rk+&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MggIARBFGCcYOzIGCAIQRRg7MgYIAxBFGDkyBwgEEAAYgAQyCggFEAAYsQMYgAQyBggGEEUYPDIGCAcQRRg80gEIMzAxMWowajSoAgCwAgE&sourceid=chrome&ie=UTF-8#vhid=/g/11vyc9130z&vssid=dcptpi"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-red-600 text-white shadow-lg group-hover:opacity-100 transition text-sm hover:scale-105"
