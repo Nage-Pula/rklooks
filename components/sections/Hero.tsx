@@ -27,8 +27,8 @@ export default function Hero() {
               transition={{ duration: 0.45, ease: "easeOut" }}
               className="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900"
             >
-              <span className="text-pink-600">RK</span>{" "}
-              <span className="text-slate-900">LOOKS</span>
+              <span className="text-pink-600">RK LOOK'S HAIR STUDIO</span>{" "}
+              <span className="text-slate-900"></span>
               <span className="mx-auto mt-3 block h-1 w-24 rounded-full bg-amber-500" />
             </motion.h1>
 
@@ -38,7 +38,7 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="mt-6 text-xl sm:text-2xl font-semibold text-slate-800"
             >
-              Haircut & Hair Patch Salon
+              Haircut & Hair Patch Services
             </motion.p>
 
             <motion.p

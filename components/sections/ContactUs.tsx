@@ -222,7 +222,7 @@ export default function ContactUs() {
           initial={{ scale: 1 }}
           animate={pulseActive ? { scale: [1, 1.08, 1] } : { scale: 1 }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="fixed top-1/2 right-5 -translate-y-1/2 z-50  rounded-full flex items-center justify-center"
+          className="fixed top-1/2 right-5 -translate-y-1/2 z-999  rounded-full flex items-center justify-center"
         >
           {/* <Image
             src="/images/beauty-care.png"

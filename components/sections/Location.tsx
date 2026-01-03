@@ -35,7 +35,7 @@ export default function Location() {
 
             <div className="mt-6 flex justify-center">
               <a
-                href="https://g.page/rk-looks-hair-studio"
+                href="https://www.google.com/maps/place/RK+LOOKS+HAIR+STUDIO+AND+BEAUTY+SELOON/@16.2421971,80.0464718,3a,75y,110h,85.62t/data=!3m7!1e1!3m5!1s6TYSluhsx_PCYD2LrPFLFg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D4.376006268122637%26panoid%3D6TYSluhsx_PCYD2LrPFLFg%26yaw%3D110.00407442739078!7i13312!8i6656!4m7!3m6!1s0x3a4a810306a7f1b1:0xaee0046534c51eff!8m2!3d16.2421039!4d80.0466144!10e5!16s%2Fg%2F11vyc9130z?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-slate-900 px-6 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-slate-800 active:scale-95"

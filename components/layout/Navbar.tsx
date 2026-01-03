@@ -97,7 +97,7 @@ export default function Navbar() {
 
                 <button
                     onClick={() => router.push("/")}
-                    className="font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-pink-400 to-pink-600"
+                    className="font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-pink-400 to-pink-600 text-lg md:text-3xl"
                 >
                     RK LOOKS
                 </button>
